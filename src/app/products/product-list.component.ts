@@ -4,7 +4,7 @@ import { ProductService } from './product.service';
 
 
 @Component({
-    selector: 'pm-products',
+    // selector: 'pm-products',     //when using routes, we dont need a selector
     templateUrl: './product-list.component.html',
     styleUrls: ['./product-list.component.css']
 })
@@ -50,7 +50,7 @@ export class ProductListComponent implements OnInit {
     // not in constructor.  
     ngOnInit(): void {
         console.log("In OnInit");
-        this.productService.getProducts().subscribe(
+        this.productService.getProducts$().subscribe(
             products => {
                 this.products = products;
                 this.filteredProducts = this.products;

@@ -6,8 +6,18 @@
 </div>
 
 <h1>
-  Acme Product Management
+  <!-- Acme Product Management -->
+  <nav class='navbar navbar-expand nevbar-light bg-light'>
+    <a class='navbar-brand'>{{pageTitle}}</a>
+    <ul class='nav nav-pills'>
+      <li><a class='nav-link' [routerLink]="['/welcome']">Home</a></li>
+      <li><a class='nav-link' [routerLink]="['/products']">Product List</a></li>
+    </ul>
+  </nav>
 </h1>
+<div class='container'>
+  <router-outlet></router-outlet>
+</div>
 <div>
-  <pm-products></pm-products>
+  <!-- <pm-products></pm-products> -->
 </div>
