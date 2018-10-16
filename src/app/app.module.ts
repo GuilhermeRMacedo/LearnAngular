@@ -10,6 +10,7 @@ import { ConvertToSpacesPipe } from './shared/convert-to-spaces.pipe';
 import { StarComponent } from './shared/star.component';
 import { ProductsDetailComponent } from './products/products-detail.component';
 import { WelcomeComponent } from './home/welcome.component';
+import { ProductDetailGuard } from './products/product-detail.guard';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,9 @@ import { WelcomeComponent } from './home/welcome.component';
         path: 'products', component: ProductListComponent
       },
       {
-        path: 'products/:id', component: ProductsDetailComponent
+        path: 'products/:id',
+        canActivate: [ProductDetailGuard], 
+        component: ProductsDetailComponent
       },
       {
         path: 'welcome', component: WelcomeComponent
